@@ -73,21 +73,6 @@ body::before {
   max-width: 100%;
 }
 
-.share__thumb {
-  display: block;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 0 14px rgba(0, 245, 255, 0.25);
-  line-height: 0;
-}
-
-.share__thumb img {
-  display: block;
-  width: 96px;
-  height: auto;
-}
-
 .brand {
   min-width: 0;
 }
