@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="dark" />
   <meta name="description" content="Retro Neon Pong — A.I. Battle. A neon arcade pong match against a human-like opponent." />
+  <link rel="canonical" href="https://retro-neon-pong-azmataliakbar.netlify.app/" />
+
+  <!-- Open Graph / WhatsApp / Facebook link preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Retro Neon Pong" />
+  <meta property="og:title" content="Retro Neon Pong — A.I. Battle" />
+  <meta property="og:description" content="Neon arcade pong against a human-like A.I. opponent. Play in your browser." />
+  <meta property="og:url" content="https://retro-neon-pong-azmataliakbar.netlify.app/" />
+  <meta property="og:image" content="https://retro-neon-pong-azmataliakbar.netlify.app/images/og-image.png" />
+  <meta property="og:image:secure_url" content="https://retro-neon-pong-azmataliakbar.netlify.app/images/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Retro Neon Pong A.I. Battle: neon paddles and a glowing ball on a dark court" />
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Retro Neon Pong — A.I. Battle" />
+  <meta name="twitter:description" content="Neon arcade pong against a human-like A.I. opponent. Play in your browser." />
+  <meta name="twitter:image" content="https://retro-neon-pong-azmataliakbar.netlify.app/images/og-image.png" />
+
   <title>Retro Neon Pong — A.I. Battle</title>
   <link rel="stylesheet" href="styles/tokens.css" />
   <link rel="stylesheet" href="styles/layout.css" />
@@ -21,9 +42,21 @@
 
   <div class="app">
     <header class="topbar">
-      <div class="brand">
-        <h1 class="title">RETRO NEON PONG</h1>
-        <p class="subtitle">A.I. Battle</p>
+      <div class="brand-group">
+        <div class="share">
+          <a class="share__thumb" href="https://retro-neon-pong-azmataliakbar.netlify.app/" aria-label="Open Retro Neon Pong on Netlify">
+            <img src="images/og-image.png" alt="Retro Neon Pong preview" width="96" height="50" />
+          </a>
+          <a class="btn btn--whatsapp" target="_blank" rel="noopener noreferrer"
+             href="https://wa.me/?text=Play%20Retro%20Neon%20Pong%20(A.I.%20Battle)%20https%3A%2F%2Fretro-neon-pong-azmataliakbar.netlify.app%2F">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#25D366"/><path d="M7.2 17.6l.5-2.1a5 5 0 1 1 2 1.7z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Share on WhatsApp
+          </a>
+        </div>
+        <div class="brand">
+          <h1 class="title">RETRO NEON PONG</h1>
+          <p class="subtitle">A.I. Battle</p>
+        </div>
       </div>
       <div class="topbar__actions">
         <div class="scoreboard" aria-live="polite" aria-label="Score">

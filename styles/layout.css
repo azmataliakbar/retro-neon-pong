@@ -55,6 +55,39 @@ body::before {
   min-width: 0;
 }
 
+.brand-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  flex: 1 1 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.share__thumb {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 0 14px rgba(0, 245, 255, 0.25);
+  line-height: 0;
+}
+
+.share__thumb img {
+  display: block;
+  width: 96px;
+  height: auto;
+}
+
 .brand {
   min-width: 0;
 }
@@ -131,6 +164,7 @@ body::before {
   position: absolute;
   inset: 0;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   place-items: center;
   padding: 12px;
   background: rgba(3, 2, 9, 0.45);

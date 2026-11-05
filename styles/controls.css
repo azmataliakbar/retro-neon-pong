@@ -34,6 +34,8 @@
 
 .card {
   width: min(100%, 340px);
+  min-width: 0;
+  max-width: 100%;
   padding: clamp(16px, 4vw, 26px);
   border-radius: var(--radius);
   display: flex;
@@ -96,6 +98,23 @@
   border-color: transparent;
   background: linear-gradient(135deg, var(--cyan), #7a5cff);
   box-shadow: 0 0 22px rgba(0, 245, 255, 0.4);
+}
+
+.btn--whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 12px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(37, 211, 102, 0.18);
+  border-color: rgba(37, 211, 102, 0.6);
+}
+
+.btn--whatsapp:hover {
+  background: rgba(37, 211, 102, 0.3);
 }
 
 .btn--ghost {
