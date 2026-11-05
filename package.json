@@ -1,0 +1,14 @@
+{
+  "name": "retro-neon-pong",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Retro Neon Pong (A.I. Battle): a dark-mode neon pong game with a human-like AI opponent.",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

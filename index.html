@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Retro Neon Pong — A.I. Battle. A neon arcade pong match against a human-like opponent." />
+  <title>Retro Neon Pong — A.I. Battle</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/controls.css" />
+</head>
+<body>
+  <div id="file-notice" class="file-notice" hidden>
+    <p><strong>The game isn't running yet.</strong></p>
+    <p>Opening this file directly from disk blocks the game script. In a terminal, go to the project folder, run <code>npm start</code>, then open <code>http://localhost:8080</code>.</p>
+  </div>
+  <script>
+    if (location.protocol === 'file:') document.getElementById('file-notice').hidden = false;
+  </script>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <h1 class="title">RETRO NEON PONG</h1>
+        <p class="subtitle">A.I. Battle</p>
+      </div>
+      <div class="topbar__actions">
+        <div class="scoreboard" aria-live="polite" aria-label="Score">
+          <span id="score-player">0</span><span class="scoreboard__sep">:</span><span id="score-ai">0</span>
+        </div>
+        <button id="btn-pause" class="btn btn--ghost" type="button">Pause</button>
+      </div>
+    </header>
+
+    <main class="console">
+      <aside class="panel glass panel--hud" aria-label="Match status">
+        <h2>Match</h2>
+        <dl>
+          <dt>Difficulty</dt><dd id="hud-difficulty">Normal</dd>
+          <dt>Rally</dt><dd id="hud-rally">0</dd>
+          <dt>Best</dt><dd id="hud-best">0</dd>
+        </dl>
+        <p class="hint">W / S or ↑ / ↓ to move.<br />P or Esc to pause.</p>
+      </aside>
+
+      <section class="stage">
+        <div id="arena-frame" class="arena">
+          <canvas id="arena" aria-label="Pong arena"></canvas>
+
+          <div id="overlay" class="overlay" hidden>
+            <div id="panel-menu" class="glass card" hidden>
+              <h2>Choose your rival</h2>
+              <div class="diff-group" role="group" aria-label="Difficulty">
+                <button class="diff-btn" type="button" data-difficulty="easy" aria-pressed="false">Easy</button>
+                <button class="diff-btn" type="button" data-difficulty="normal" aria-pressed="true">Normal</button>
+                <button class="diff-btn" type="button" data-difficulty="hard" aria-pressed="false">Hard</button>
+                <button class="diff-btn" type="button" data-difficulty="insane" aria-pressed="false">Insane</button>
+              </div>
+              <label class="field">
+                <span>First to</span>
+                <select id="target-score">
+                  <option value="3">3</option>
+                  <option value="5">5</option>
+                  <option value="7" selected>7</option>
+                  <option value="11">11</option>
+                  <option value="21">21</option>
+                </select>
+              </label>
+              <button id="btn-start" class="btn btn--primary" type="button">Start match</button>
+            </div>
+
+            <div id="panel-paused" class="glass card" hidden>
+              <h2>Paused</h2>
+              <button id="btn-resume" class="btn btn--primary" type="button">Resume</button>
+              <button id="btn-menu-paused" class="btn" type="button">Quit to menu</button>
+            </div>
+
+            <div id="panel-over" class="glass card" hidden>
+              <h2 id="over-title">Match over</h2>
+              <p id="over-score" class="muted"></p>
+              <label class="field">
+                <span>Your name</span>
+                <input id="player-name" type="text" maxlength="12" value="PLAYER" autocomplete="off" />
+              </label>
+              <button id="btn-save" class="btn btn--primary" type="button">Save score</button>
+              <p id="save-status" role="status"></p>
+              <button id="btn-again" class="btn" type="button">Play again</button>
+              <button id="btn-menu-over" class="btn" type="button">Menu</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="touch-pad" aria-label="On-screen paddle controls">
+          <button class="touch-btn" type="button" data-action="up" aria-label="Move paddle up">▲</button>
+          <button class="touch-btn" type="button" data-action="down" aria-label="Move paddle down">▼</button>
+        </div>
+      </section>
+
+      <aside class="panel glass panel--board" aria-label="High scores">
+        <h2>Top 10</h2>
+        <ol id="leaderboard" class="leaderboard"></ol>
+      </aside>
+    </main>
+
+    <footer class="signature">
+      <p class="signature__text">Idea By: Azmat Ali</p>
+    </footer>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
